@@ -31,7 +31,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 public class Bot extends TelegramLongPollingBot {
     private HashMap<Integer, Integer> mUserAccess = new HashMap<>();
     private HashMap<Long, Integer> mBanList = new HashMap<>();
-    private String[] shitCypto = new String[]{"SPRTS", "DIME", "PAC", "FUNK", "SMLY", "IFLT", "PRX"};
+    private String[] shitCypto = new String[]{"SPRTS", "DIME", "PAC", "FUNK", "SMLY", "IFLT", "PRX", "XIOS", "XIOS"};
     private ArrayList<String> dailyMass = new ArrayList<>();
 
     private String mApiKey = "490552086:AAGN63CTIMYwu59REI3YF5tnsi4MhpObLPg";
@@ -171,12 +171,12 @@ public class Bot extends TelegramLongPollingBot {
     }
 
     private boolean isAdministratorMessage(Message message) {
-//        List<ChatMember> chatMembers = getAdministrator(message);
-//        for (ChatMember chatMember : chatMembers) {
-//            if (chatMember.getUser().getId().intValue() == message.getFrom().getId()) {
-//                return true;
-//            }
-//        }
+        List<ChatMember> chatMembers = getAdministrator(message);
+        for (ChatMember chatMember : chatMembers) {
+            if (chatMember.getUser().getId().intValue() == message.getFrom().getId()) {
+                return true;
+            }
+        }
         return false;
     }
 
